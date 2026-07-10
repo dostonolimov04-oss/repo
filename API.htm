@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const options = {
+            method: 'GET',
+            headers: {
+                accept: 'application/json',
+                authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyOTg4OGM2NThjYTVmOTRkZjdlODg0Y2Q3ODY4MTc2MiIsIm5iZiI6MTc3ODE1MzU0NC45NDgsInN1YiI6IjY5ZmM3ODQ4M2JlMWQzMzlmZGE2NDhiNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.L3gJtgI96y3tkN9a7PiKLesNb8Wl-XRDibPEAesn-N4'
+            }
+        };
+
+        fetch('https://api.themoviedb.org/3/trending/movie/day', options)
+            .then(res => res.json())
+            .then(res => console.log(res))
+            .catch(err => console.error(err));
+
+
+            
+
+            
+    function WeekMovieGet() {
+        const options = {
+            method: 'GET',
+            headers: {
+                accept: 'application/json',
+                authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyOTg4OGM2NThjYTVmOTRkZjdlODg0Y2Q3ODY4MTc2MiIsIm5iZiI6MTc3ODE1MzU0NC45NDgsInN1YiI6IjY5ZmM3ODQ4M2JlMWQzMzlmZGE2NDhiNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.L3gJtgI96y3tkN9a7PiKLesNb8Wl-XRDibPEAesn-N4'
+            }
+        };
+
+        fetch('https://api.themoviedb.org/3/trending/movie/week', options)
+            .then(res => res.json())
+            .then((data) => {
+                weekFilmsWrapper.innerHTML = data.results.map((movie) => {
+                    const { poster_path, release_date, title, vote_average, } = movie;
+                    function getPercentColor(percent) {
+                        if (percent >= 70) return '#21d07a'; 
+                        if (percent >= 40) return '#d2d531'; 
+                        return '#db2360';                    
+                    }
+
+                    const rating = vote_average ? +((vote_average.toFixed(1)).split(".").join("")) : 0;
+                    const color = getPercentColor(rating);
+
+                    console.log(movie);
+
+                    return `
+                    <div class="popular-cards-wrapper1">
+                        <div class="card">
+                            <span onclick="modalOpener()">
+                                <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                            </span>
+
+                            <div class="card-image">
+                                <img src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">
+
+
+                                <div class="rating-circle">
+                                    <svg viewBox="0 0 36 36" class="circular-chart">
+                                        <path class="circle-bg"
+                                            d="M18 2.0845
+                                              a 15.9155 15.9155 0 0 1 0 31.831
+                                              a 15.9155 15.9155 0 0 1 0 -31.831"
+                                            stroke="#1e1e1e"
+                                            stroke-width="5"
+                                            fill="none"
+                                        />
+                                        <path class="circle"
+                                            stroke-dasharray="${rating}, 100"
+                                            style="stroke: ${color};"
+                                            d="M18 2.0845
+                                              a 15.9155 15.9155 0 0 1 0 31.831
+                                              a 15.9155 15.9155 0 0 1 0 -31.831"
+                                            stroke-width="5"
+                                            fill="none"
+                                        />
+                                        <text x="9" y="20" class="percentage" fill="white">${rating}%</text>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <h2>${title}</h2>
+                        <p class="release-date">${release_date }</p>
+                    </div>
+                `;
+                }).join('');
+            })
+    }
+    </script>
+</body>
+
+</html>

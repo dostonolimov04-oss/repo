@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="Modalwrapper" class="hidden">
+    <div class="modal">
+      <div class="modal-header">
+        <p>Add Product</p>
+        <button class="close-button" onclick="togglemodal()"><span class="closebtn-icon"><ion-icon
+              name="close-outline"></ion-icon></span></button>
+      </div>
+
+      <div class="modal-footer">
+        <div class="modal-footerIconWrapper1">
+          <span><ion-icon name="arrow-redo-outline"></ion-icon></span>
+          <span><ion-icon name="time-outline"></ion-icon></span>
+        </div>
+        <div class="modal-footerIconWrapper2">
+          <p>Watch on <span style="font-size: 20px;margin-top: 10px;"><ion-icon name="logo-youtube"></ion-icon></span><span
+              style="font-weight: 600;">YouTube</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <div class="header-Wrapper">
+      <header>
+
+        <div class="left-header">
+          <img src="./Logo.svg" alt="">
+
+          <div class="films-wrapper">
+            <a class="films" href="">Movies</a>
+
+            <div class="films-tools">
+              <a href="">Popular</a>
+              <a href="">New Playing</a>
+              <a href="">Upcoming</a>
+              <a href="">Top Rated</a>
+            </div>
+          </div>
+
+          <div class="showsWrapper">
+            <a href="">TVShows</a>
+
+            <div class="showsWrapper-tools">
+              <a href="">Popular</a>
+              <a href="">Airing Today</a>
+              <a href="">On TV</a>
+              <a href="">Top Rated</a>
+            </div>
+          </div>
+
+
+          <div class="PeopleWrapper">
+            <a href="">People</a>
+
+            <div class="people-tools">
+              <a href="">Popular</a>
+
+            </div>
+          </div>
+
+
+          <div class="awardsWrapper">
+            <a href="">Awards</a>
+
+            <div class="awards-tools">
+              <a href="">Popular</a>
+              <a href="">Upcoming</a>
+
+            </div>
+          </div>
+
+
+          <div class="returnWrapper">
+            <a href="">More</a>
+
+            <div class="return-tools">
+              <a href="">Discussions </a>
+              <a href="">Leaderboard</a>
+              <a href="">Support</a>
+              <a href="">API Documentations</a>
+              <a href="">API for Business</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="right-header">
+          <a style="font-size: 20px;" href="">+</a>
+          <a class="translateBtn" href="">EN</a>
+          <a href="">Login</a>
+          <a href="">Join TMDB</a>
+          <label for="searchIput">
+            <span class="search-Icon"><ion-icon name="search-outline"></ion-icon></span>
+        </div>
+      </header>
+    </div>
+    <div class="headerSearchWrapper">
+      <button class="header-searchBtn"><ion-icon name="search-outline"></ion-icon></button>
+      <input id="searchInput" type="search" placeholder="Film,teleko'rsatuv,kishi va h.k.qidirish...">
+
+
+      <div class="searchHistoryBox">
+        <ul class="searchHistoryList">
+
+          <li style="font-weight: 800;"> <span style="height: 800px;"><ion-icon
+                name="trending-up-outline"></ion-icon></span>Trending</li>
+          <li><span><ion-icon name="search-outline"></ion-icon></span>Obession</li>
+          <li><span><ion-icon name="search-outline"></ion-icon></span>Passenger</li>
+          <li><span><ion-icon name="search-outline"></ion-icon></span>House of the dragon</li>
+          <li><span><ion-icon name="search-outline"></ion-icon></span>Enloa Holmes 3</li>
+          <li><span><ion-icon name="search-outline"></ion-icon></span>Silo</li>
+          <li><span><ion-icon name="search-outline"></ion-icon></span>Mushoku Tensei: Jobless Reincarnation</li>
+          <li><span><ion-icon name="search-outline"></ion-icon></span>Sparks of Tomorrow</li>
+          <li><span><ion-icon name="search-outline"></ion-icon></span>You and I Are Polar Opposites</li>
+          <li><span><ion-icon name="search-outline"></ion-icon></span>Toy Story 5</li>
+        </ul>
+      </div>
+      </label>
+    </div>
+
+    <main>
+      <div class="main-itemwrapper">
+        <div>
+          <h2>Welcome.</h2>
+          <h3>Millions of movies, TV shows and people to discover. Explore now.</h3><br><br>
+          <form action="https://www.themoviedb.org/">
+            <input type="search" placeholder="Film,teleko'rsatuv,kishi va h.k.qidirish...">
+            <button>Search</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+
+    <section>
+      <div class="section-header">
+        <h3>Trending</h3>
+
+        <div class="films-filterWrapper">
+          <span onclick="todayBtn()" class="todayBtn">Today</span>
+          <span onclick="weekBtn()" class="weekBtn">This week</span>
+          <span class="toggle"></span>
+        </div>
+      </div>
+      <div id="todayfilmsWrapper" class="todayfilmsWrapper">
+        <div id="filmsWrapper1" class="todayfilmbox">
+          <div class="todaymovio"></div>
+
+          <div style=" display: none ;" class="weekMovio"> </div>
+        </div>
+      </div>
+    </section>
+
+    <article class="article">
+      <div class="article-header">
+        <h3>Latest Trailers</h3>
+
+        <div class="films-filterWrapper2">
+          <span style="z-index: 23746666;background: transparent;" onclick="articlePopularBtn()"
+            class="articlePopularBtn">Popular</span>
+          <span onclick="articleTheatrBtn()" style="font-weight: 600;" class="articleTheatrBtn">in Theaters</span>
+          <span class="articleToggle"></span>
+        </div>
+
+        <div class="Popular-filmsWrapper">
+          <div class="Popular-films-box">
+            <div class="Popular-films-wrapper"></div>
+
+            <div style="display: none;" class="Popular-films-wrapper2"></div>
+    </article>
+
+
+
+    <div class="section2">
+      <div class="section-header2">
+        <h3>What's Popular</h3>
+
+        <div class="films-filterWrapper3">
+          <span onclick="freeWatchTodayBtn()" class="freeWatchTodayBtn">In Theaters</span>
+
+        </div>
+      </div>
+      <div id="todayfilmsWrapper" class="todayfilmsWrapper2">
+        <div id="filmsWrapper1" class="todayfilmbox">
+          <div class="todaymovio2"></div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="leadboardWrapper">
+      <div class="Wrapper">
+        <div class="Leadboard-heder">
+          <h2>Leaderboard</h2>
+          <div class="Edit-timesWrapper">
+            <span class="text1">All Times Editds</span>
+            <span class="text2">Edits This Week</span>
+          </div>
+        </div>
+
+        <div class="userStatusWrapper">
+          <div class="userLogo"> </div>
+
+          <div class="AlltimeWrapper">
+            <h3>FixItAndVanish</h3><br>
+            <div class="allTimeLineWrapper">
+              <div class="alltimeLine"></div>
+              <p>77,149</p>
+            </div>
+
+            <div class="allTimeLineWrapper">
+              <div class="weektimeLine"></div>
+              <p>29,922</p>
+            </div>
+
+          </div>
+
+          <div class="userLogo1"> </div>
+
+          <div class="AlltimeWrapper1">
+            <h3>Roman</h3><br>
+            <div class="allTimeLineWrapper1">
+              <div class="alltimeLine1"></div>
+              <p>872,531</p>
+            </div>
+
+            <div class="allTimeLineWrapper1">
+              <div class="weektimeLine1"></div>
+              <p>28,497</p>
+            </div>
+
+          </div>
+          <div class="userLogo2"> </div>
+
+          <div class="AlltimeWrapper2">
+            <h3>SANU</h3><br>
+            <div class="allTimeLineWrapper2">
+              <div class="alltimeLine2"></div>
+              <p>97,865</p>
+            </div>
+
+            <div class="allTimeLineWrapper2">
+              <div class="weektimeLine2"></div>
+              <p>27,723</p>
+            </div>
+
+          </div>
+
+
+          <div class="userLogo3">S </div>
+
+          <div class="AlltimeWrapper3">
+            <h3>savsdarkroom</h3><br>
+            <div class="allTimeLineWrapper3">
+              <div class="alltimeLine3"></div>
+              <p>19,413</p>
+            </div>
+
+            <div class="allTimeLineWrapper3">
+              <div class="weektimeLine3"></div>
+              <p>19,413</p>
+            </div>
+
+          </div>
+
+
+
+          <div class="userLogo4">S </div>
+
+          <div class="AlltimeWrapper4">
+            <h3>sunshine1111111</h3><br>
+            <div class="allTimeLineWrapper4">
+              <div class="alltimeLine4"></div>
+              <p>18,071</p>
+            </div>
+
+            <div class="allTimeLineWrapper4">
+              <div class="weektimeLine4"></div>
+              <p>18,071</p>
+            </div>
+          </div>
+
+
+          <div class="userLogo5">D </div>
+
+          <div class="AlltimeWrapper5">
+            <h3>David</h3><br>
+            <div class="allTimeLineWrapper5">
+              <div class="alltimeLine5"></div>
+              <p>226,297</p>
+            </div>
+
+            <div class="allTimeLineWrapper5">
+              <div class="weektimeLine5"></div>
+              <p>14,016</p>
+            </div>
+
+          </div>
+          <div class="userLogo6">F</div>
+
+          <div class="AlltimeWrapper6">
+            <h3>flamingounicorn</h3><br>
+            <div class="allTimeLineWrapper6">
+              <div class="alltimeLine6"></div>
+              <p>26,394</p>
+            </div>
+
+            <div class="allTimeLineWrapper6">
+              <div class="weektimeLine6"></div>
+              <p>11,077</p>
+            </div>
+          </div>
+
+
+          <div class="userLogo7">N</div>
+
+          <div class="AlltimeWrapper7">
+            <h3>NunoEddie</h3><br>
+            <div class="allTimeLineWrapper7">
+              <div class="alltimeLine7"></div>
+              <p>47,958</p>
+            </div>
+
+            <div class="allTimeLineWrapper7">
+              <div class="weektimeLine7"></div>
+              <p>10,289</p>
+            </div>
+          </div>
+
+
+
+          <div class="userLogo8"> </div>
+
+          <div class="AlltimeWrapper8">
+            <h3>Samara </h3><br>
+            <div class="allTimeLineWrapper8">
+              <div class="alltimeLine8"></div>
+              <p>4,773,434</p>
+            </div>
+
+            <div class="allTimeLineWrapper8">
+              <div class="weektimeLine8"></div>
+              <p>9,902</p>
+            </div>
+          </div>
+
+
+          <div class="userLogo9"> </div>
+
+          <div class="AlltimeWrapper9">
+            <h3>Lucas</h3><br>
+            <div class="allTimeLineWrapper9">
+              <div class="alltimeLine9"></div>
+              <p>221,544</p>
+            </div>
+
+            <div class="allTimeLineWrapper9">
+              <div class="weektimeLine9"></div>
+              <p>9,369</p>
+            </div>
+
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer_content_wrapper">
+        <div class="footer_brand_wrapper">
+          <img class="footer_brand_img" src="./Logo2.svg" alt="" />
+          <button id="footer_btn" class="footer_white_btn">
+            <span>Join the Community</span>
+          </button>
+        </div>
+        <div class="footer_links_wrapper">
+
+          <div class="footer_link_item">
+            <div class="footer_link_title">THE BASICS</div>
+            <a href="" class="footer_link">About TMDB</a>
+            <a href="" class="footer_link">Contact Us</a>
+            <a href="" class="footer_link">API Documentation</a>
+            <a href="" class="footer_link">API for Business</a>
+            <a href="" class="footer_link">System Status</a>
+          </div>
+
+
+          <div class="footer_link_item">
+            <div class="footer_link_title">GET INVOLVED</div>
+            <a href="" class="footer_link">Contribution Bible</a>
+            <a href="" class="footer_link">Add New Movie</a>
+            <a href="" class="footer_link">Add New TV Show</a>
+          </div>
+
+
+          <div class="footer_link_item">
+            <div class="footer_link_title">COMMUNITY</div>
+            <a href="" class="footer_link">Guidelines</a>
+            <a href="" class="footer_link">Discussions</a>
+            <a href="" class="footer_link">Leaderboard</a>
+            <a href="" class="footer_link">Support Forums</a>
+          </div>
+
+
+          <div class="footer_link_item">
+            <div class="footer_link_title">LEGAL</div>
+            <a href="" class="footer_link">Terms of Use</a>
+            <a href="" class="footer_link">API Terms of Use</a>
+            <a href="" class="footer_link">Privacy Policy</a>
+            <a href="" class="footer_link">DMCA Policy</a>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+    <script src="./main.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
