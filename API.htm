@@ -23,35 +23,35 @@
             .catch(err => console.error(err));
 
 
-            
 
-            
-    function WeekMovieGet() {
-        const options = {
-            method: 'GET',
-            headers: {
-                accept: 'application/json',
-                authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyOTg4OGM2NThjYTVmOTRkZjdlODg0Y2Q3ODY4MTc2MiIsIm5iZiI6MTc3ODE1MzU0NC45NDgsInN1YiI6IjY5ZmM3ODQ4M2JlMWQzMzlmZGE2NDhiNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.L3gJtgI96y3tkN9a7PiKLesNb8Wl-XRDibPEAesn-N4'
-            }
-        };
 
-        fetch('https://api.themoviedb.org/3/trending/movie/week', options)
-            .then(res => res.json())
-            .then((data) => {
-                weekFilmsWrapper.innerHTML = data.results.map((movie) => {
-                    const { poster_path, release_date, title, vote_average, } = movie;
-                    function getPercentColor(percent) {
-                        if (percent >= 70) return '#21d07a'; 
-                        if (percent >= 40) return '#d2d531'; 
-                        return '#db2360';                    
-                    }
 
-                    const rating = vote_average ? +((vote_average.toFixed(1)).split(".").join("")) : 0;
-                    const color = getPercentColor(rating);
+        function WeekMovieGet() {
+            const options = {
+                method: 'GET',
+                headers: {
+                    accept: 'application/json',
+                    authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyOTg4OGM2NThjYTVmOTRkZjdlODg0Y2Q3ODY4MTc2MiIsIm5iZiI6MTc3ODE1MzU0NC45NDgsInN1YiI6IjY5ZmM3ODQ4M2JlMWQzMzlmZGE2NDhiNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.L3gJtgI96y3tkN9a7PiKLesNb8Wl-XRDibPEAesn-N4'
+                }
+            };
 
-                    console.log(movie);
+            fetch('https://api.themoviedb.org/3/trending/movie/week', options)
+                .then(res => res.json())
+                .then((data) => {
+                    weekFilmsWrapper.innerHTML = data.results.map((movie) => {
+                        const { poster_path, release_date, title, vote_average, } = movie;
+                        function getPercentColor(percent) {
+                            if (percent >= 70) return '#21d07a';
+                            if (percent >= 40) return '#d2d531';
+                            return '#db2360';
+                        }
 
-                    return `
+                        const rating = vote_average ? +((vote_average.toFixed(1)).split(".").join("")) : 0;
+                        const color = getPercentColor(rating);
+
+                        console.log(movie);
+
+                        return `
                     <div class="popular-cards-wrapper1">
                         <div class="card">
                             <span onclick="modalOpener()">
@@ -87,12 +87,32 @@
                             </div>
                         </div>
                         <h2>${title}</h2>
-                        <p class="release-date">${release_date }</p>
+                        <p class="release-date">${release_date}</p>
                     </div>
                 `;
-                }).join('');
+                    }).join('');
+                })
+        }
+
+
+
+
+
+
+        const movieId = 550; // Film ID (masalan, Fight Club)
+        const apiKey = 'd14b1adbe04d8ccc380f0580684188f5';
+
+        const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}&language=en-US`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const cast = data.cast; // Aktyorlar ro'yxati
+                cast.forEach(actor => {
+                    console.log(actor.name, '-', actor.character);
+                });
             })
-    }
+            .catch(error => console.error('Xatolik:', error));
     </script>
 </body>
 

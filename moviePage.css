@@ -1,676 +1,734 @@
-body {
-    overflow-x: hidden;
-}
-
-.navWrapper {
-    margin-top: 55px;
-    width: 100%;
-    height: 50px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    nav {
-        display: flex;
-        justify-content: space-around;
-        gap: 40px;
-        height: 100%;
-        align-items: center;
-
-        a {
-            text-decoration: none;
-            color: black;
-        }
-    }
-
-    .OverviewWrapper,
-    .MediaWrapper,
-    .FandomWrapper,
-    .ShareWrapper {
-        position: relative;
-        height: 100%;
-        display: flex;
-        align-items: center;
-    }
-
-
-    .Overview-tools,
-    .media-tools,
-    .fandom-tools,
-    .share-tools {
-        line-height: 25px;
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: #fff;
-        flex-direction: column;
-        border-radius: 10px;
-        padding: 20px;
-        z-index: 10;
-        min-width: 150px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .OverviewWrapper:hover .Overview-tools,
-    .MediaWrapper:hover .media-tools,
-    .FandomWrapper:hover .fandom-tools,
-    .ShareWrapper:hover .share-tools {
-        display: block;
-    }
-}
-
-
-.MediaWrapper:hover .media-tools {
-    display: block;
-    background-color: aliceblue;
-    flex-direction: column;
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-}
-
-.FandomWrapper:hover .fandom-tools {
-    display: block;
-    background-color: aliceblue;
-    flex-direction: column;
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-}
-
-.ShareWrapper:hover .share-tools {
-    display: block;
-    background-color: aliceblue;
-    flex-direction: column;
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-}
-
-
-.AboutMovie {
-    width: 100%;
-    height: 56vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("https://image.tmdb.org/t/p/w500/nz7i42yhLIJ4ve9JKgM6NthoLHO.jpg");
-
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    background-position: left;
-
-    .Wrapper-box {
-        color: #fff;
-        padding: 30px;
-        margin: 0 auto;
-        max-width: 1200px;
-        flex-wrap: wrap;
-    }
-
-
-    .creatorName:hover {
-        color: grey;
-        border-bottom: 1px solid grey;
-    }
-
-    .Movie-card {
-        border-radius: 10px;
-        width: 300px;
-        height: 450px;
-        overflow: hidden;
-    }
-
-    .formatStatusWrapper {
-        margin-left: 340px;
-        margin-top: -47vh;
-
-    }
-
-    .stausTypeWrapper {
-        margin-top: 40px;
-    }
-
-    .MovieStatusWrapper {
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-        align-items: center;
+       body {
+           overflow-x: hidden;
+       }
+
+       .navWrapper {
+           margin-top: 55px;
+           width: 100%;
+           height: 50px;
+
+           display: flex;
+           justify-content: center;
+           align-items: center;
+
+           nav {
+               display: flex;
+               justify-content: space-around;
+               gap: 40px;
+               height: 100%;
+               align-items: center;
+
+               a {
+                   text-decoration: none;
+                   color: black;
+               }
+           }
+
+           .OverviewWrapper,
+           .MediaWrapper,
+           .FandomWrapper,
+           .ShareWrapper {
+               position: relative;
+               height: 100%;
+               display: flex;
+               align-items: center;
+           }
+
+
+           .Overview-tools,
+           .media-tools,
+           .fandom-tools,
+           .share-tools {
+               line-height: 25px;
+               display: none;
+               position: absolute;
+               top: 100%;
+               left: 0;
+               background-color: #fff;
+               flex-direction: column;
+               border-radius: 10px;
+               padding: 20px;
+               z-index: 10;
+               min-width: 150px;
+               box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+           }
+
+           .OverviewWrapper:hover .Overview-tools,
+           .MediaWrapper:hover .media-tools,
+           .FandomWrapper:hover .fandom-tools,
+           .ShareWrapper:hover .share-tools {
+               display: block;
+           }
+       }
+
+
+       .MediaWrapper:hover .media-tools {
+           display: block;
+           background-color: aliceblue;
+           flex-direction: column;
+           border-radius: 10px;
+           padding: 20px;
+           display: flex;
+       }
+
+       .FandomWrapper:hover .fandom-tools {
+           display: block;
+           background-color: aliceblue;
+           flex-direction: column;
+           border-radius: 10px;
+           padding: 20px;
+           display: flex;
+       }
+
+       .ShareWrapper:hover .share-tools {
+           display: block;
+           background-color: aliceblue;
+           flex-direction: column;
+           border-radius: 10px;
+           padding: 20px;
+           display: flex;
+       }
+
+
+       .AboutMovie {
+           padding-top: 20px;
+           width: 100%;
+           height: 56vh;
+           background-color: #032541;
+
+           background-repeat: no-repeat;
+           background-size: cover;
+
+           background-position: left;
+
+           .Wrapper-box {
+               color: #fff;
+               padding: 30px;
+               margin: 0 auto;
+               max-width: 1200px;
+               flex-wrap: wrap;
+           }
+
+
+           .creatorName:hover {
+               color: grey;
+               border-bottom: 1px solid grey;
+           }
+
+           .Movie-card {
+               border-radius: 10px;
+               width: 300px;
+               height: 450px;
+               overflow: hidden;
+
+               justify-content: center;
+               align-items: center;
+               display: flex;
+           }
+
+           .Movie-card:hover img {
+               display: none;
+           }
+
+           .Movie-card:hover {
+               backdrop-filter: blur(20px);
+           }
+
+
+           .Expand-Icon {
+               font-size: 25px;
+               margin: 5px;
+           }
+
+           .Expand-Text {
+               font-size: 25px;
+               margin: 5px;
+               border-bottom: 2px solid grey;
+           }
+
+           .formatStatusWrapper {
+               margin-left: 340px;
+               margin-top: -47vh;
+
+           }
+
+           .stausTypeWrapper {
+               margin-top: 40px;
+           }
+
+           .MovieStatusWrapper {
+               display: flex;
+               flex-direction: row;
+               gap: 20px;
+               align-items: center;
+
+               button {
+                   border: none;
+                   background-color: #032541;
+                   color: aliceblue;
+                   padding: 10px 15px;
+                   border-radius: 20px;
+                   margin-top: 20px;
+
+                   .infoIcon {
+                       background-color: aliceblue;
+                       padding: 0px 5px;
+                       border-radius: 50%;
 
-        button {
-            border: none;
-            background-color: #032541;
-            color: aliceblue;
-            padding: 10px 15px;
-            border-radius: 20px;
-            margin-top: 20px;
-
-            .infoIcon {
-                background-color: aliceblue;
-                padding: 0px 5px;
-                border-radius: 50%;
-
-                color: #032541;
-            }
-
-            .vibetext {
-                border-bottom: 2px solid aqua;
-            }
-        }
-    }
-
-
-
-    .borderText {
-        font-size: 12px;
-        background: transparent;
-        border: 1px solid grey;
-        border-radius: 3px;
-        padding: 3px;
-    }
-
-    .MovieMarkIconsWrapper {
-        margin-top: 30px;
-        gap: 20px;
-        display: flex;
-        align-items: center;
-
-        .icon {
-            color: aliceblue;
-            background-color: #032541;
-            width: 46px;
-            height: 46px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-
-            span {
-                font-size: 19px;
-            }
-        }
-
-        img {
-            width: 15px;
-            height: 15px;
-        }
-    }
-
-    h4 {
-        border-bottom: 1px solid #fff;
-        width: fit-content;
-
-    }
-
-    h5 {
-        margin-top: 7px;
-    }
-}
-
-
-
-.todayfilmsWrapper {
-    font-family: sans-serif;
-    width: 100%;
-    height: 400px;
-    margin-top: 100px;
-
-}
-
-
-
-.todayfilmbox {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px 0;
-    display: flex;
-    gap: 15px;
-    margin-left: 300px;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-padding: 20px;
-
-    border-radius: 10px;
-
-
-}
-
-
-.todayfilmbox .todaymovio {
-    scroll-snap-align: start;
-    flex: 0 0 200px;
-    display: flex;
-    gap: 15px;
-
-
-    .card {
-        position: relative;
-        width: 138px;
-        height: 175px;
-        border-radius: 8px;
-        background-color: red;
-
-    }
-
-    h2:hover {
-        color: grey;
-        border-bottom: 1px solid grey;
-    }
-
-    .popular-cards-wrapper3 {
-
-        line-height: 23px;
-        border: 1px solid black;
-        border-radius: 8px;
-        padding: 10px;
-    }
-}
-
-aside {
-    padding: 20px;
-    margin-left: 75%;
-    margin-top: -30vh;
-    width: 340px;
-    background-color: #fff;
-    height: 130vh;
-
-    hr {
-        margin: 30px 0px;
-    }
-
-    a {
-        text-decoration: none;
-    }
-}
-
-.WatchNowBtnWrapper {
-    width: 300px;
-    height: 50px;
-    margin-left: 75%;
-    border-radius: 5px;
-    background-color: #c5c5c5;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-
-    div {
-        display: flex;
-        flex-direction: column;
-        flex: end;
-    }
-
-    button {
-        background-color: aqua;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        font-weight: 600;
-        font-size: 17px;
-        padding: 7px;
-    }
-}
-
-.aside-headerIconWrapper {
-
-    display: flex;
-    gap: 20px;
-    font-size: 25px;
-
-    h3 {
-        border-left: 1px solid grey;
-        height: 30px;
-        padding-left: 10px;
-    }
-}
-
-.MovieAboutWrapper {
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-}
-
-.asideKeywordsWrapper {
-    margin-top: 40px;
-    max-width: 280px;
-    flex-wrap: wrap;
-
-    h3 {
-        font-size: 20px;
-    }
-
-    span {
-
-        background-color: #c5c5c5;
-        color: black;
-        padding: 10px;
-        line-height: 40px;
-        border-radius: 5px;
-    }
-}
-
-.contentScoreWrapper {
-    display: flex;
-    flex-direction: column;
-
-    .percent {
-
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        background-color: red;
-        color: #fff;
-        padding: 10px;
-    }
-
-    .message {
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        background-color: #c5c5c5;
-        padding: 5px 10px;
-    }
-}
-
-.comentsWrapper {
-    margin-top: 40px;
-    display: flex;
-    width: 300px;
-    flex-wrap: wrap;
-
-    .comentWrapper {
-        width: 300px;
-        align-items: center;
-        margin-top: 10px;
-        display: flex;
-        gap: 10px;
-        line-height: 20px;
-
-        a {
-            text-decoration: none;
-            color: grey;
-            width: fit-content;
-            border-bottom: 1px solid grey;
-        }
-
-        .userLogo {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background-color: red;
-        }
-    }
-}
-
-.viewEditWrapper {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-
-    .viewEdittext {
-        color: grey;
-        border-bottom: 1px solid grey;
-        width: fit-content;
-
-    }
-
-    h3 {
-        margin-top: 30px;
-    }
-
-    .trendingLine {
-        width: 260px;
-        background-color: brown;
-        border-radius: 10px;
-        margin: 30px 0px;
-        height: 5px;
-    }
-
-    button {
-        width: 100px;
-        font-weight: 600;
-        padding: 10px 15px;
-        background-color: brown;
-        color: #fff;
-        border: none;
-        border-radius: 30px;
-    }
-
-    .viewEdittext2 {
-        margin: 30px 0px;
-        color: grey;
-        border-bottom: 1px solid grey;
-        width: fit-content;
-
-    }
-}
-
-.cast_Link {
-    font-weight: 600;
-    font-size: 20px;
-    margin-top: 500px;
-    margin-left: 320px;
-    text-decoration: none;
-    color: black;
-    border-bottom: 1px solid grey;
-}
-
-.cast_Link:hover {
-    color: grey;
-}
-
-section {
-    width: 100%;
-    margin-left: 290px;
-
-    .hr {
-        margin-bottom: 30px;
-    }
-
-    .socialWrapper {
-        display: flex;
-        flex-direction: row;
-        gap: 30px;
-    }
-
-    .span1 {
-        font-weight: 600;
-    }
-
-    .span2 {
-        font-weight: 600;
-        border-bottom: 5px solid black;
-    }
-
-    .sectiontext1 {
-
-        margin: 30px 0px;
-    }
-
-    .span3 {
-        border-bottom: 1px solid grey;
-        font-weight: 600;
-    }
-
-    .hr2 {
-        margin: 30px 0px;
-    }
-}
-
-
-
-.todayfilmsWrapper3 {
-    font-family: sans-serif;
-    width: 100%;
-    height: 400px;
-    margin-left: -300px;
-}
-
-
-
-.todayfilmbox2 {
-    max-width: 1800px;
-    margin: 0 auto;
-    padding: 20px 0;
-    display: flex;
-    gap: 15px;
-    margin-left: 300px;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-padding: 20px;
-
-    border-radius: 10px;
-
-
-}
-
-
-.todayfilmbox2 .todaymovio2 {
-    scroll-snap-align: start;
-    flex: 0 0 200px;
-    display: flex;
-    gap: 5px;
-
-
-    .card {
-        overflow: hidden;
-        position: relative;
-        width: 500px;
-        height: 300px;
-        border-radius: 8px;
-        background-color: red;
-
-    }
-
-
-
-    .popular-cards-wrapper3 {
-
-        border-radius: 8px;
-    }
-}
-
-.hr3 {
-    margin-bottom: 30px;
-}
-
-.todayfilmsWrapper4 {
-    font-family: sans-serif;
-    width: 100%;
-    height: 400px;
-    margin-left: -300px;
-}
-
-
-
-.todayfilmbox3 {
-    max-width: 1800px;
-    margin: 0 auto;
-    padding: 20px 0;
-    display: flex;
-    gap: 15px;
-    margin-left: 300px;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-padding: 20px;
-
-    border-radius: 10px;
-
-
-}
-
-
-.todayfilmbox3 .todaymovio3 {
-    scroll-snap-align: start;
-    flex: 0 0 200px;
-    display: flex;
-    gap: 10px;
-
-
-    .card {
-        overflow: hidden;
-        position: relative;
-        width: 250px;
-        height: 141px;
-        border-radius: 8px;
-        background-color: red;
-
-    }
-
-
-
-    .popular-cards-wrapper3 {
-
-        border-radius: 8px;
-    }
-}
-
-.moretitle {
-    margin-top: -160px;
-}
-
-.filmsTypeWrapper {
-    display: flex;
-    gap: 10px;
-    width: 1000px;
-    flex-wrap: wrap;
-    line-height: 20px;
-
-    span {
-
-        color: #fff;
-        background-color: rgb(0, 153, 255);
-        padding: 10px;
-        font-weight: 600;
-        border-radius: 20px;
-    }
-}
-
-.progresLine {
-    margin-top: 30px;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-}
-
-.todaymovio {
-    display: flex;
-    gap: 15px;
-    overflow-x: auto;
-    padding: 10px;
-}
-
-.popular-cards-wrapper3 {
-    min-width: 140px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
-    overflow: hidden;
-}
-
-.popular-cards-wrapper3 .card {
-    width: 100%;
-    height: 210px;
-}
-
-.popular-cards-wrapper3 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.popular-cards-wrapper3 h2 {
-    font-size: 16px;
-    margin: 8px;
-    font-weight: 700;
-}
-
-.popular-cards-wrapper3 h3 {
-    font-size: 14px;
-    margin: 0 8px;
-    font-weight: 500;
-}
-
-.popular-cards-wrapper3 p {
-    font-size: 13px;
-    margin: 4px 8px;
-}
+                       color: #032541;
+                   }
+
+                   .vibetext {
+                       border-bottom: 2px solid aqua;
+                   }
+               }
+
+               button:hover {
+                   transition: all 0.3s;
+                   transform: scale(1.1);
+               }
+           }
+
+
+
+           .borderText {
+               font-size: 12px;
+               background: transparent;
+               border: 1px solid grey;
+               border-radius: 3px;
+               padding: 3px;
+           }
+
+           .MovieMarkIconsWrapper {
+               margin-top: 30px;
+               gap: 20px;
+               display: flex;
+               align-items: center;
+
+               .icon {
+                   color: aliceblue;
+                   background-color: #032541;
+                   width: 46px;
+                   height: 46px;
+                   display: flex;
+                   justify-content: center;
+                   align-items: center;
+                   border-radius: 50%;
+
+                   span {
+                       font-size: 19px;
+                   }
+               }
+
+               img {
+                   width: 15px;
+                   height: 15px;
+               }
+           }
+
+           h4 {
+               border-bottom: 1px solid #fff;
+               width: fit-content;
+
+           }
+
+           h5 {
+               margin-top: 7px;
+           }
+       }
+
+
+
+       .todayfilmsWrapper {
+           font-family: sans-serif;
+           width: 100%;
+           height: 300px;
+           margin-top: 100px;
+
+       }
+
+
+
+       .todayfilmbox {
+           max-width: 1100px;
+           margin: 0 auto;
+           padding: 20px 0;
+           display: flex;
+           gap: 15px;
+           margin-left: 300px;
+           overflow-y: hidden;
+           scroll-snap-type: x mandatory;
+           scroll-padding: 20px;
+
+           border-radius: 10px;
+
+
+       }
+
+
+       .todayfilmbox .todaymovio {
+           scroll-snap-align: start;
+           flex: 0 0 200px;
+           display: flex;
+           gap: 15px;
+
+
+           .card {
+               background-color: black;
+               position: relative;
+               width: 138px;
+               height: 175px;
+               border-radius: 8px;
+               border-bottom-right-radius: 0px;
+               border-bottom-left-radius: 0px;
+
+           }
+
+           h2:hover {
+               color: grey;
+               border-bottom: 1px solid grey;
+           }
+
+           .popular-cards-wrapper3 {
+               height: 290px;
+               line-height: 23px;
+               border: 1px solid rgb(170, 170, 170);
+               border-radius: 8px;
+               padding: 10px;
+           }
+       }
+
+       aside {
+           padding: 20px;
+           margin-left: 75%;
+           margin-top: -30vh;
+           width: 340px;
+           background-color: #fff;
+           height: 130vh;
+
+           hr {
+               margin: 30px 0px;
+           }
+
+           a {
+               text-decoration: none;
+           }
+       }
+
+       .WatchNowBtnWrapper {
+           width: 300px;
+           height: 50px;
+           margin-left: 75%;
+           border-radius: 5px;
+           background-color: #c5c5c5;
+           padding: 10px;
+           display: flex;
+           justify-content: space-between;
+
+           div {
+               display: flex;
+               flex-direction: column;
+               flex: end;
+           }
+
+           button {
+               background-color: aqua;
+               color: #fff;
+               border: none;
+               border-radius: 5px;
+               font-weight: 600;
+               font-size: 17px;
+               padding: 7px;
+           }
+       }
+
+       .aside-headerIconWrapper {
+
+           display: flex;
+           gap: 20px;
+           font-size: 25px;
+
+           h3 {
+               border-left: 1px solid grey;
+               height: 30px;
+               padding-left: 10px;
+           }
+       }
+
+       .MovieAboutWrapper {
+           margin-top: 40px;
+           display: flex;
+           flex-direction: column;
+           gap: 35px;
+       }
+
+       .asideKeywordsWrapper {
+           margin-top: 40px;
+           max-width: 280px;
+           flex-wrap: wrap;
+
+           h3 {
+               font-size: 20px;
+           }
+
+           span {
+
+               background-color: #c5c5c5;
+               color: black;
+               padding: 10px;
+               line-height: 40px;
+               border-radius: 5px;
+           }
+
+           span:hover {
+               background-color: rgb(100, 95, 95);
+           }
+       }
+
+       .contentScoreWrapper {
+           display: flex;
+           flex-direction: column;
+
+           .percent {
+
+               border-top-left-radius: 10px;
+               border-top-right-radius: 10px;
+               background-color: orangered;
+               color: #fff;
+               padding: 10px;
+           }
+
+           .message {
+               border-bottom-left-radius: 10px;
+               border-bottom-right-radius: 10px;
+               background-color: #c5c5c5;
+               padding: 5px 10px;
+           }
+       }
+
+       .comentsWrapper {
+           margin-top: 40px;
+           display: flex;
+           width: 300px;
+           flex-wrap: wrap;
+
+           .comentWrapper {
+               width: 300px;
+               align-items: center;
+               margin-top: 10px;
+               display: flex;
+               gap: 10px;
+               line-height: 20px;
+
+               a {
+                   text-decoration: none;
+                   color: grey;
+                   width: fit-content;
+                   border-bottom: 1px solid grey;
+               }
+
+               .userLogo {
+                   width: 56px;
+                   height: 56px;
+                   border-radius: 50%;
+                   background-color: black;
+               }
+           }
+       }
+
+       .viewEditWrapper {
+           display: flex;
+           flex-direction: column;
+           margin-top: 20px;
+
+           .viewEdittext {
+               color: grey;
+               border-bottom: 1px solid grey;
+               width: fit-content;
+
+           }
+
+           h3 {
+               margin-top: 30px;
+           }
+
+           .trendingLine {
+               width: 260px;
+               background-color: brown;
+               border-radius: 10px;
+               margin: 30px 0px;
+               height: 5px;
+           }
+
+           button {
+               width: 100px;
+               font-weight: 600;
+               padding: 10px 15px;
+               background-color: brown;
+               color: #fff;
+               border: none;
+               border-radius: 30px;
+           }
+
+           .viewEdittext2 {
+               margin: 30px 0px;
+               color: grey;
+               border-bottom: 1px solid grey;
+               width: fit-content;
+
+           }
+       }
+
+       .cast_Link {
+           font-weight: 600;
+           font-size: 20px;
+           margin-top: 500px;
+           margin-left: 320px;
+           text-decoration: none;
+           color: black;
+           border-bottom: 1px solid grey;
+       }
+
+       .cast_Link:hover {
+           color: grey;
+       }
+
+       section {
+           width: 100%;
+           margin-left: 290px;
+
+           .hr {
+               margin-bottom: 30px;
+           }
+
+           .socialWrapper {
+               display: flex;
+               flex-direction: row;
+               gap: 30px;
+           }
+
+           .span1 {
+               font-weight: 600;
+           }
+
+           .span2 {
+               font-weight: 600;
+               border-bottom: 5px solid black;
+           }
+
+           .sectiontext1 {
+
+               margin: 30px 0px;
+           }
+
+           .span3 {
+               border-bottom: 1px solid grey;
+               font-weight: 500;
+           }
+
+           .hr2 {
+               margin: 30px 0px;
+           }
+       }
+
+
+
+       .todayfilmsWrapper3 {
+           font-family: sans-serif;
+           width: 100%;
+           height: 400px;
+           margin-left: 0px;
+       }
+
+
+
+       .todayfilmbox2 {
+           max-width: 1100px;
+           margin: 0 auto;
+           padding: 20px 0;
+           display: flex;
+           gap: 15px;
+           margin-left: 0px;
+           overflow-y: hidden;
+           scroll-snap-type: x mandatory;
+           scroll-padding: 20px;
+
+           border-radius: 10px;
+
+
+       }
+
+
+       .todayfilmbox2 .todaymovio2 {
+           scroll-snap-align: start;
+           flex: 0 0 200px;
+           display: flex;
+
+           .card1 {
+               overflow: hidden;
+               position: relative;
+               width: 533px;
+               height: 300px;
+               border-top-left-radius: 8px;
+               border-bottom-left-radius: 8px;
+
+
+           }
+
+           .card1 img {
+               width: 533px;
+               height: 300px;
+           }
+
+           .card2 {
+               overflow: hidden;
+               position: relative;
+               width: 533px;
+               height: 300px;
+
+
+           }
+
+           .card2 img {
+               width: 533px;
+               height: 300px;
+           }
+
+           .card3 {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               overflow: hidden;
+               position: relative;
+
+               border-top-right-radius: 8px;
+               border-bottom-right-radius: 8px;
+
+
+
+           }
+
+           .card3 img {
+               width: 200px;
+               height: 300px;
+           }
+
+           .popular-cards-wrapper3 {
+
+               border-radius: 8px;
+           }
+       }
+
+       .hr3 {
+           margin-bottom: 30px;
+       }
+
+       .todayfilmsWrapper4 {
+           font-family: sans-serif;
+           width: 100%;
+           height: 400px;
+           margin-left: -300px;
+       }
+
+
+
+       .todayfilmbox3 {
+           max-width: 1800px;
+           margin: 0 auto;
+           padding: 20px 0;
+           display: flex;
+           gap: 15px;
+           margin-left: 300px;
+           overflow-y: hidden;
+           scroll-snap-type: x mandatory;
+           scroll-padding: 20px;
+
+           border-radius: 10px;
+
+
+       }
+
+
+       .todayfilmbox3 .todaymovio3 {
+           scroll-snap-align: start;
+           flex: 0 0 200px;
+           display: flex;
+           gap: 10px;
+
+
+           .card {
+               overflow: hidden;
+               position: relative;
+               width: 250px;
+               height: 141px;
+               border-radius: 8px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+
+               img {
+                   width: 250px;
+                   height: 141px;
+               }
+           }
+
+
+
+           .popular-cards-wrapper3 {
+
+               border-radius: 8px;
+           }
+
+           h4 {
+               margin-top: 5px;
+           }
+
+           h4:hover {
+               color: grey;
+               border-bottom: 1px solid grey;
+               width: fit-content;
+           }
+       }
+
+       .moretitle {
+           margin-top: -160px;
+       }
+
+       .filmsTypeWrapper {
+           display: flex;
+           gap: 10px;
+           width: 1000px;
+           flex-wrap: wrap;
+           line-height: 20px;
+
+           span {
+
+               color: #fff;
+               background-color: rgb(0, 153, 255);
+               padding: 10px;
+               font-weight: 600;
+               border-radius: 20px;
+           }
+
+           span:hover {
+               background-color: #032541;
+           }
+       }
+
+       .progresLine {
+           margin-top: 30px;
+           width: 100px;
+           height: 100px;
+           border-radius: 50%;
+       }
+
+       .progresLine:hover {
+           transition: all 0.3s;
+           transform: scale(1.1);
+       }
+
+       /* .movieTitle {
+           display: flex;
+           flex-direction: row;
+           width: 360px;
+       } */

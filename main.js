@@ -1,9 +1,5 @@
 
-// const mpdalopen = document.getElementById("mpdalopen");
 
-// function modalOpener() {
-//     mpdalopen.style.display = 'block';
-// }
 
 
 
@@ -22,6 +18,21 @@ const weekBtnclass = document.querySelector(".weekBtn");
 const toggleclass = document.querySelector(".toggle");
 
 
+
+
+
+
+function weekMovietoggleModal(span) {
+
+    const card = span.closest('.card');
+    const box = card.querySelector('.div');
+
+    if (box.style.display === 'flex') {
+        box.style.display = 'none';
+    } else {
+        box.style.display = 'flex';
+    }
+}
 
 
 function weekBtn() {
@@ -46,9 +57,15 @@ function weekBtn() {
                     console.log(movie);
                     weekMovio.innerHTML += `
      <div class="popular-cards-wrapper1">
-              <div class="card"> <span >
+              <div class="card"> <span onclick="weekMovietoggleModal(this)">
                   <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
                 </span>
+                <div id="box" class="div">
+                <a class="addLink" href=""> <ion-icon name="list-outline"></ion-icon> Add to list</a>
+                <a class="ratingLink" href=""><ion-icon name="heart"></ion-icon> Favorite</a>
+                <a class="ratingLink" href=""><ion-icon name="bookmark"></ion-icon> Watchlist</a>
+                <a class="yourRatingLink" href=""><ion-icon name="star"></ion-icon>  Your rating</a>
+            </div>
               <a href="./movioPage.html?id=${id}"> <img src="https://image.tmdb.org/t/p/w500${poster_path}" class="" alt=""></a>
                 
               </div>
@@ -83,16 +100,16 @@ function todayBtn() {
     todayBtnclass.style.color = 'transparent';
     todayBtnclass.style.webkitBackgroundClip = 'text';
     todayBtnclass.style.backgroundClip = 'text';
-    todayBtnclass.style.Background = "linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%)";
+    todayBtnclass.style.background = "linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%)";
 }
 
 
 
 
 
-function todayMovietoggleModal(spanElement) {
+function todayMovietoggleModal(span) {
 
-    const card = spanElement.closest('.card');
+    const card = span.closest('.card');
     const box = card.querySelector('.div');
 
     if (box.style.display === 'flex') {
@@ -122,7 +139,7 @@ function MovieGet() {
                 console.log(day);
                 todaymovio.innerHTML += `
      <div class="popular-cards-wrapper1">
-              <div class="card"> <span onclick="todayMovietoggleModal(this)"">
+              <div class="card"> <span onclick="todayMovietoggleModal(this)">
                   <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
                 </span>
                 <div id="box" class="div">
@@ -269,7 +286,7 @@ function articleTheatrBtn() {
             }
         };
 
-        fetch('https://api.themoviedb.org/3/trending/movie/day', options)
+        fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options)
             .then(res => res.json())
             .then((day) => {
                 day.results.forEach((day) => {
@@ -336,9 +353,15 @@ function TheatersGET() {
                 console.log(now_playing);
                 todaymovio2.innerHTML += `
      <div class="popular-cards-wrapper1">
-              <div class="card"> <span>
+             <div class="card"> <span onclick="theatrMovietoggleModal(this)"">
                   <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
                 </span>
+                <div id="box" class="div">
+                <a class="addLink" href=""> <ion-icon name="list-outline"></ion-icon> Add to list</a>
+                <a class="ratingLink" href=""><ion-icon name="heart"></ion-icon> Favorite</a>
+                <a class="ratingLink" href=""><ion-icon name="bookmark"></ion-icon> Watchlist</a>
+                <a class="yourRatingLink" href=""><ion-icon name="star"></ion-icon>  Your rating</a>
+            </div>
                <a href="./movioPage.html?id=${id}">   <img src="https://image.tmdb.org/t/p/w500${poster_path}" class="" alt=""></a>
                 
               </div>
@@ -352,3 +375,17 @@ function TheatersGET() {
 }
 
 TheatersGET()
+
+
+
+function theatrMovietoggleModal(span) {
+
+    const card = span.closest('.card');
+    const box = card.querySelector('.div');
+
+    if (box.style.display === 'flex') {
+        box.style.display = 'none';
+    } else {
+        box.style.display = 'flex';
+    }
+}

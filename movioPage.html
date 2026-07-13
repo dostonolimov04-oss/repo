@@ -154,128 +154,17 @@
                     <span>on Apple TV</span>
                 </div>
             </div>
-            <div class="todayfilmbox">
-                <div id="filmsWrapper1" class="todaymovio"></div>
+            <div id="filmsWrapper1" class="todayfilmbox">
+                <div id="castsWrapper" class="todaymovio"></div>
             </div>
             <a class="cast_Link" href="">Full Cast& Crew</a>
-            <section>
-                <hr class="hr">
-                <div>
-                    <div class="socialWrapper">
-                        <h3>Social</h3>
-                        <span class="span1">Reiews 0</span>
-                        <span class="span2">Discussion 5</span>
-                    </div>
-                    <p class="sectiontext1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, expedita?
-                    </p>
-                    <span class="span3">Go to Discussions</span>
+            <section id="section">
 
-                    <hr class="hr2">
-
-                    <div class="socialWrapper">
-                        <h3>Media</h3>
-                        <span class="span2">Most Popular</span>
-                        <span class="span1">Videos 22</span>
-                        <span class="span1">Backdrop 61</span>
-                        <span class="span1">Poster 152</span>
-
-                    </div>
-                    <div id="todayfilmsWrapper3" class="todayfilmsWrapper3">
-                        <div id="filmsWrapper2" class="todayfilmbox2">
-                            <div class="todaymovio2">
-                                <div class="popular-cards-wrapper3">
-
-                                    <div class="card"> </div>
-
-                                </div>
-                                <div class="popular-cards-wrapper3">
-
-                                    <div class="card"> </div>
-
-                                </div>
-
-
-                                <div class="popular-cards-wrapper3">
-
-                                    <div class="card"> </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <hr class="hr3">
-
-                    <h3>If you liked Moana, you might also like...</h3>
-
-                    <div id="todayfilmsWrapper3" class="todayfilmsWrapper4">
-                        <div id="filmsWrapper2" class="todayfilmbox3">
-                            <div id="similarMovies" class="todaymovio3"></div>
-                                <div class="popular-cards-wrapper3">
-
-                                    <div class="card"> <img
-                                            src="https://www.film.ru/sites/default/files/styles/thumb_1024x450/public/trailers_frame/50756918-4901337.jpg"
-                                            alt=""></div>
-
-                                </div>
-                                <div class="popular-cards-wrapper3">
-
-                                    <div class="card"> </div>
-                                    <h4>200% Wolf</h4>
-
-                                </div>
-
-
-                                <div class="popular-cards-wrapper3">
-
-                                    <div class="card"> </div>
-
-                                </div>
-                                <div class="popular-cards-wrapper3">
-
-                                    <div class="card"> </div>
-                                    <h4>200% Wolf</h4>
-
-                                </div>
-
-
-                                <div class="popular-cards-wrapper3">
-
-                                    <div class="card"> </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h3 class="moretitle">Or maybe something a bit more...</h3>
-                    <div class="filmsTypeWrapper">
-                        <span>fantastical</span>
-                        <span>fantastical</span>
-                        <span>fantastical</span>
-                        <span>fantastical</span>
-                        <span>fantastical</span>
-                        <span>fantastical</span>
-                        <span>fantastical</span>
-                        <span>fantastical</span>
-                        <span>fantastical</span>
-                        <span>fantastical</span>
-                        <span>fantastical</span>
-                        <span>fantastical</span>
-                        <span>fantastical</span>
-                        <span>fantastical</span>
-                        <span>fantastical</span>
-                        <span>fantastical</span>
-                        <span>fantastical</span>
-                        <span>fantastical</span>
-                    </div>
-                </div>
             </section>
         </div>
 
 
-        <aside id="aside"> </aside>
+        <aside style="background-color: white; z-index: 10;" id="aside"> </aside>
 
         <footer>
             <div class="footer_content_wrapper">
@@ -313,7 +202,7 @@
                         <a href="" class="footer_link">Support Forums</a>
                     </div>
 
-
+                   
                     <div class="footer_link_item">
                         <div class="footer_link_title">LEGAL</div>
                         <a href="" class="footer_link">Terms of Use</a>
@@ -326,9 +215,60 @@
             </div>
         </footer>
 
-        <script src="./moviePage.js"></script>
+<script src="./moviePage.js"></script>
+
         <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Film Tafsilotlari</title>
+</head>
+<body>
+    <div class="movie-details">
+        <img id="moviePoster" src="" alt="Poster">
+        <h1 id="movieTitle"></h1>
+        <p id="movieOverview"></p>
+        <p><strong>Sana:</strong> <span id="movieDate"></span></p>
+        <p><strong>Reyting:</strong> <span id="movieRating"></span></p>
+    </div>
+
+    <script >
+        const urlParams = new URLSearchParams(window.location.search);
+const movieId = urlParams.get('id');
+
+console.log("Tanlangan film ID:", movieId);
+
+
+function getMovieDetails() {
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyOTg4OGM2NThjYTVmOTRkZjdlODg0Y2Q3ODY4MTc2MiIsIm5iZiI6MTc3ODE1MzU0NC45NDgsInN1YiI6IjY5ZmM3ODQ4M2JlMWQzMzlmZGE2NDhiNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.L3gJtgI96y3tkN9a7PiKLesNb8Wl-XRDibPEAesn-N4'
+        }
+    };
+
+    fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US`, options)
+        .then(res => res.json())
+        .then(movie => {
+            console.log(movie);
+            
+            // Sahifaga ma'lumotlarni chiqarish
+            document.getElementById('movieTitle').innerText = movie.original_title;
+            document.getElementById('moviePoster').src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+            document.getElementById('movieOverview').innerText = movie.overview;
+            document.getElementById('movieDate').innerText = movie.release_date;
+            document.getElementById('movieRating').innerText = movie.vote_average;
+        });
+}
+
+getMovieDetails();
+    </script>
+</body>
+</html> -->

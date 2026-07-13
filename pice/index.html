@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Movie</title>
+
+    <link rel="stylesheet" href="./movie.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="movieHero">
+
+        <div class="heroBackground"></div>
+
+        <div class="heroOverlay"></div>
+
+        <div class="container">
+
+            <div class="movieContent">
+
+                <div class="poster">
+
+                    <img id="moviePoster">
+
+                </div>
+
+                <div class="info">
+
+                    <h1 id="movieTitle"></h1>
+
+                    <div class="facts">
+
+                        <span id="releaseDate"></span>
+
+                        <span>•</span>
+
+                        <span id="genres"></span>
+
+                        <span>•</span>
+
+                        <span id="runtime"></span>
+
+                    </div>
+
+                    <div class="ratingBox">
+
+                        <div class="ratingCircle">
+
+                            <span id="rating"></span>
+
+                        </div>
+
+                        <p>User Score</p>
+
+                    </div>
+
+                    <h3>Overview</h3>
+
+                    <p id="overview"></p>
+
+                    <div class="crew">
+
+                        <div>
+
+                            <h4 id="director"></h4>
+
+                            <span>Director</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= DETAILS ================= -->
+
+    <section class="details">
+
+        <div class="container">
+
+            <div class="leftColumn">
+
+                <h2>Top Billed Cast</h2>
+
+                <div class="castContainer" id="castContainer">
+
+                </div>
+
+                <h2>Recommendations</h2>
+
+                <div class="recommendations" id="recommendations">
+
+                </div>
+
+            </div>
+
+            <aside class="rightColumn">
+
+                <div class="movieFacts">
+
+                    <div>
+
+                        <h4>Status</h4>
+
+                        <p id="status"></p>
+
+                    </div>
+
+                    <div>
+
+                        <h4>Original Language</h4>
+
+                        <p id="language"></p>
+
+                    </div>
+
+                    <div>
+
+                        <h4>Budget</h4>
+
+                        <p id="budget"></p>
+
+                    </div>
+
+                    <div>
+
+                        <h4>Revenue</h4>
+
+                        <p id="revenue"></p>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </section>
+
+    <!-- ================= SIMILAR ================= -->
+
+    <section class="similarMovies">
+
+        <div class="container">
+
+            <h2>Similar Movies</h2>
+
+            <div class="similarGrid" id="similarMovies">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="./js/api.js"></script>
+    <script src="./js/movie.js"></script>
+
+</body>
+
+</html>

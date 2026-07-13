@@ -253,7 +253,7 @@ main {
   justify-content: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("https://static.okko.tv/images/v4/dde1d7bb-4c81-41c0-98dd-4dfc11a3f1e0?presetId=4000&amp;width=1200&amp;height=630&amp;scale=1&amp;quality=80");
+  background-color: #032541;
   color: aliceblue;
   align-items: center;
 }
@@ -411,6 +411,7 @@ section {
     }
   }
 
+
   span {
     position: absolute;
     margin: 7px;
@@ -426,15 +427,78 @@ section {
     width: 26px;
     height: 26px;
     border-radius: 50%;
-    cursor: pointer;
   }
 
   span:hover {
     background-color: #0177D2;
   }
 
+  #box {
+    display: none;
+  }
 
+  .div {
+    z-index: 20;
+    display: none;
+    position: fixed;
+    position: absolute;
+    top: 50px;
+    left: 80px;
+    width: 110px;
+    background-color: aliceblue;
+    color: black;
+    height: 160px;
+    display: flex;
+    border-radius: 8px;
+    flex-direction: column;
+    text-align: center;
+
+    .ratingLink {
+      color: grey;
+      text-decoration: none;
+      padding: 5px;
+      border-bottom: 1px solid grey;
+    }
+
+    .addLink {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      color: grey;
+      text-decoration: none;
+      padding: 5px;
+      border-bottom: 1px solid grey;
+    }
+
+    .yourRatingLink {
+      color: grey;
+      text-decoration: none;
+      padding: 5px;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+
+    }
+
+    .yourRatingLink:hover {
+      background-color: #032541;
+      color: aliceblue;
+    }
+
+    .ratingLink:hover {
+      background-color: #032541;
+      color: aliceblue;
+    }
+
+    .addLink:hover {
+      background-color: #032541;
+      color: aliceblue;
+    }
+  }
 }
+
+
+
+
+
 
 .todayfilmbox .todaymovio {
 
@@ -597,6 +661,7 @@ section {
     }
   }
 
+ 
   span {
     position: absolute;
     margin: 7px;
@@ -612,15 +677,76 @@ section {
     width: 26px;
     height: 26px;
     border-radius: 50%;
-    cursor: pointer;
   }
 
   span:hover {
     background-color: #0177D2;
   }
 
+  #box {
+    display: none;
+  }
 
+  .div {
+    z-index: 20;
+    display: none;
+    position: fixed;
+    position: absolute;
+    top: 50px;
+    left: 80px;
+    width: 110px;
+    background-color: aliceblue;
+    color: black;
+    height: 160px;
+    display: flex;
+    border-radius: 8px;
+    flex-direction: column;
+    text-align: center;
+
+    .ratingLink {
+      color: grey;
+      text-decoration: none;
+      padding: 5px;
+      border-bottom: 1px solid grey;
+    }
+
+    .addLink {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      color: grey;
+      text-decoration: none;
+      padding: 5px;
+      border-bottom: 1px solid grey;
+    }
+
+    .yourRatingLink {
+      color: grey;
+      text-decoration: none;
+      padding: 5px;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+
+    }
+
+    .yourRatingLink:hover {
+      background-color: #032541;
+      color: aliceblue;
+    }
+
+    .ratingLink:hover {
+      background-color: #032541;
+      color: aliceblue;
+    }
+
+    .addLink:hover {
+      background-color: #032541;
+      color: aliceblue;
+    }
+  }
 }
+
+
+
 
 
 
@@ -1638,6 +1764,7 @@ footer {
   height: 10px;
   justify-content: center;
   margin-left: 100px;
+  border-radius: 50%;
 }
 
 .percentage {
@@ -1832,4 +1959,8 @@ footer {
   display: flex;
   justify-content: space-between;
   padding: 20px;
+
+
+
 }
+
